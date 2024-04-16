@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import {
   FiGithub,
   FiInstagram,
@@ -61,8 +62,8 @@ function Footer() {
       links: [
         { name: "Help & Support", link: "#" },
         { name: "Trust & Safety", link: "#" },
-        { name: "Selling on Fiverr", link: "#" },
-        { name: "Buying on Fiverr", link: "#" },
+        { name: "Selling on Learnup", link: "#" },
+        { name: "Buying on Learnup", link: "#" },
       ],
     },
     {
@@ -82,16 +83,16 @@ function Footer() {
       ],
     },
     {
-      headerName: "Move From Fiverr",
+      headerName: "Move From Learnup",
       links: [
-        { name: "Fiverr Business", link: "#" },
-        { name: "Fiverr Pro", link: "#" },
-        { name: "Fiverr Logo Maker", link: "#" },
-        { name: "Fiverr Guides", link: "#" },
+        { name: "Learnup Business", link: "#" },
+        { name: "Learnup Pro", link: "#" },
+        { name: "Learnup Logo Maker", link: "#" },
+        { name: "Learnup Guides", link: "#" },
         { name: "Get Inspired", link: "#" },
-        { name: "Fiverr Select", link: "#" },
+        { name: "Learnup Select", link: "#" },
         { name: "ClearVoice", link: "#" },
-        { name: "Fiverr Workspace", link: "#" },
+        { name: "Learnup Workspace", link: "#" },
         { name: "Learn", link: "#" },
         { name: "Working Not Working", link: "#" },
       ],
@@ -116,7 +117,12 @@ function Footer() {
         })}
       </ul>
       <div className="mt-12 flex items-center justify-between">
-        <FiverrLogo fillColor={"#404145"} />
+        <Image 
+          alt="logo"
+          src="learnup-logo2.svg"
+          width="220"
+          height="220"
+        />
         <ul className="flex gap-5">
           {socialLinks.map(({ icon, link, name }) => (
             <li

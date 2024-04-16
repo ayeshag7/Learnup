@@ -47,7 +47,6 @@ function Navbar() {
   };
 
   const links = [
-    { linkName: "Fiverr Business", handler: "#", type: "link" },
     { linkName: "Explore", handler: "#", type: "link" },
     { linkName: "English", handler: "#", type: "link" },
     { linkName: "Become a Seller", handler: "#", type: "link" },
@@ -84,6 +83,7 @@ function Navbar() {
 
   useEffect(() => {
     if (cookies.jwt && !userInfo) {
+      console.log(cookies.jwt)
       const getUserInfo = async () => {
         try {
           const {
@@ -165,16 +165,19 @@ function Navbar() {
     <>
       {isLoaded && (
         <nav
-          className={`w-full px-24 flex justify-between items-center py-6  top-0 z-30 transition-all duration-300 ${
+          className={`w-full px-16 flex justify-between items-center py-6  top-0 z-30 transition-all duration-300 ${
             navFixed || userInfo
               ? "fixed bg-white border-b border-gray-200"
               : "absolute bg-transparent border-transparent"
           }`}
         >
           <div>
-            <Link href="/">
-              <FiverrLogo
-                fillColor={!navFixed && !userInfo ? "#ffffff" : "#404145"}
+            <Link href="/" className="px-2">
+              <Image
+              alt="logo"
+              src="/learnup-logo.svg"
+              width="250"
+              height="250"
               />
             </Link>
           </div>
@@ -201,7 +204,7 @@ function Navbar() {
             </button>
           </div>
           {!userInfo ? (
-            <ul className="flex gap-10 items-center">
+            <ul className="flex gap-8 items-center">
               {links.map(({ linkName, handler, type }) => {
                 return (
                   <li

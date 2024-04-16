@@ -109,13 +109,13 @@ function Profile() {
   return (
     <>
       {isLoaded && (
-        <div className="flex flex-col items-center justify-start min-h-[80vh] gap-3">
+        <div className="flex flex-col my-12 items-center justify-start min-h-[80vh] gap-3">
           {errorMessage && (
             <div>
               <span className="text-red-600 font-bold">{errorMessage}</span>
             </div>
           )}
-          <h2 className="text-3xl">Welocme to Fiverr Clone</h2>
+          <h2 className="text-3xl">Welocme to Learnup</h2>
           <h4 className="text-xl">
             Please complete your profile to get started
           </h4>

@@ -37,11 +37,16 @@ function AuthWrapper({ type }) {
           { email, password },
           { withCredentials: true }
         );
-        setCookies("jwt", { jwt: jwt });
+
+        console.log(user, jwt);
+
+        setCookies("jwt", jwt);
+
         dispatch({ type: reducerCases.CLOSE_AUTH_MODAL });
 
         if (user) {
           dispatch({ type: reducerCases.SET_USER, userInfo: user });
+          console.log(user)
           window.location.reload();
         }
       }
@@ -86,7 +91,7 @@ function AuthWrapper({ type }) {
           <div className="flex flex-col justify-center items-center p-8 gap-7">
             <h3 className="text-2xl font-semibold text-slate-700">
               {type === "login" ? "Login" : "Sign"}
-              in to Fiverr
+              in to Learnup
             </h3>
             <div className="flex flex-col gap-5">
               <button className="text-white bg-blue-500 p-3 font-semibold w-80 flex items-center justify-center relative">

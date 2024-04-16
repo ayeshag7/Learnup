@@ -25,9 +25,9 @@ function Everything() {
     },
   ];
   return (
-    <div className="bg-[#f1fdf7] flex py-20 justify-between px-24">
+    <div className="bg-[#0e734c] flex py-20 justify-between px-24">
       <div>
-        <h2 className="text-4xl mb-5 text-[#404145] font-bold">
+        <h2 className="text-4xl mb-12 text-[white] font-bold">
           The best part? Everything.
         </h2>
         <ul className="flex flex-col gap-10">
@@ -35,18 +35,16 @@ function Everything() {
             return (
               <li key={title}>
                 <div className="flex gap-2 items-center text-xl">
-                  <BsCheckCircle className="text-[#62646a]" />
-                  <h4>{title}</h4>
+                  <BsCheckCircle className="text-[white]" />
+                  <h4 className="font-medium">{title}</h4>
                 </div>
-                <p className="text-[#62646a]">{subtitle}</p>
+                <p className="text-[white] w-96">{subtitle}</p>
               </li>
             );
           })}
         </ul>
       </div>
-      <div className="relative h-96 w-2/4">
-        <Image src="/everything.webp" fill alt="everything" />
-      </div>
+      <Image src="/best-everything.svg" width="800" height="800" alt="everything" />
     </div>
   );
 }

@@ -20,29 +20,48 @@ function Index() {
     };
     getUserGigs();
   }, []);
+
+  const deleteGig = async (gigId) => {
+    try {
+      const response = await axios.delete(`/api/gigs/${gigId}`, {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${cookies.jwt}`,
+        },
+      });
+      if (response.status === 200) {
+        // Gig deleted successfully
+        // You may want to update the gigs list after deleting
+        setGigs(gigs.filter((gig) => gig.id !== gigId));
+      }
+    } catch (error) {
+      console.error("Error deleting gig:", error);
+    }
+  };
+
   return (
     <div className="min-h-[80vh] my-10 mt-0 px-32">
       <h3 className="m-5 text-2xl font-semibold">All your Gigs</h3>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <table className="w-full text-sm text-left text-gray-500">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border-[#1DBF73] bg-[#1DBF73] text-white">
                 Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border-[#1DBF73] bg-[#1DBF73] text-white">
                 Category
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border-[#1DBF73] bg-[#1DBF73] text-white">
                 Price
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border-[#1DBF73] bg-[#1DBF73] text-white">
                 Delivery Time
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border-[#1DBF73] bg-[#1DBF73]">
                 <span className="sr-only">Edit</span>
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border-[#1DBF73] bg-[#1DBF73]">
                 <span className="sr-only">Delete</span>
               </th>
             </tr>
@@ -51,12 +70,12 @@ function Index() {
             {gigs.map(({ title, category, price, deliveryTime, id }) => {
               return (
                 <tr
-                  className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  className="bg-white hover:bg-gray-50"
                   key={id}
                 >
                   <th
                     scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                   >
                     {title}
                   </th>
@@ -66,10 +85,15 @@ function Index() {
                   <td className="px-6 py-4 text-right">
                     <Link
                       href={`/seller/gigs/${id}`}
-                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                      className="font-medium text-blue-600 hover:underline"
                     >
                       Edit
                     </Link>
+                  </td>
+                  <td className="px-6 py-4 text-right">
+                    <button className="font-medium text-red-600 hover:underline" onClick={deleteGig}>
+                        Delete
+                    </button>
                   </td>
                 </tr>
               );

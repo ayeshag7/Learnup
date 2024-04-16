@@ -12,7 +12,7 @@ function CreateGigs() {
   const inputClassName =
     "block p-4 w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:ring-blue-500 focus:border-blue-500";
   const labelClassName =
-    "mb-2 text-lg font-medium text-gray-900  dark:text-white";
+    "mb-2 text-lg font-medium text-gray-900";
   const [files, setFile] = useState([]);
   const [features, setfeatures] = useState([]);
   const [data, setData] = useState({
@@ -32,8 +32,25 @@ function CreateGigs() {
   };
 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
+    // Extract the name and value from the event target
+    const { name, value } = e.target;
+  
+    // Convert the value to a number
+    let updatedValue = value;
+    if (name === "price") {
+      const numericValue = parseFloat(value);
+      updatedValue = numericValue < 5 ? 5 : numericValue;
+    } else if (name === "revisions") {
+      const numericValue = parseInt(value);
+      updatedValue = numericValue < 1 ? 1 : numericValue;
+    } else if (name === "time") {
+      const numericValue = parseInt(value);
+      updatedValue = numericValue < 1 ? 1 : numericValue;
+    }
+  
+    // Update the state with the new value
+    setData({ ...data, [name]: updatedValue });
+  };  
 
   const addFeature = () => {
     if (data.feature) {
@@ -82,7 +99,7 @@ function CreateGigs() {
   };
   return (
     <div className="min-h-[80vh] my-10 mt-0 px-32">
-      <h1 className="text-6xl text-gray-900 mb-5">Create a new Gig</h1>
+      <h1 className="text-6xl text-gray-900 mb-5 mt-12">Create a new Gig</h1>
       <h3 className="text-3xl text-gray-900 mb-5">
         Enter the details to create the gig
       </h3>
@@ -137,7 +154,7 @@ function CreateGigs() {
         </div>
         <div className="grid grid-cols-2 gap-11">
           <div>
-            <label htmlFor="delivery">Delivery Time</label>
+            <label htmlFor="delivery" className={labelClassName}>Delivery Time</label>
             <input
               type="number"
               className={inputClassName}
@@ -180,7 +197,7 @@ function CreateGigs() {
               />
               <button
                 type="button"
-                className="focus:outline-none text-white bg-blue-700 hover:bg-blue-800  font-medium  text-lg px-10 py-3 rounded-md "
+                className="focus:outline-none text-white border-[#1DBF73] bg-[#1DBF73]  font-medium  text-lg px-10 py-3 rounded-md "
                 onClick={addFeature}
               >
                 Add

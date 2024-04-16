@@ -8,7 +8,7 @@ function HomeBanner() {
   const [searchData, setSearchData] = useState("");
   useEffect(() => {
     const interval = setInterval(
-      () => setImage(image >= 6 ? 1 : image + 1),
+      () => setImage(image >= 2 ? 1 : image + 1),
       10000
     );
     return () => clearInterval(interval);
@@ -19,7 +19,7 @@ function HomeBanner() {
       <div className="absolute top-0 right-0 w-[110vw] h-full transition-opacity z-0">
         <Image
           alt="hero"
-          src="/bg-hero1.webp"
+          src="/bg-hero1.svg"
           fill
           className={`${
             image === 1 ? "opacity-100" : "opacity-0"
@@ -27,42 +27,10 @@ function HomeBanner() {
         />
         <Image
           alt="hero"
-          src="/bg-hero2.webp"
+          src="/bg-hero2.svg"
           fill
           className={`${
             image === 2 ? "opacity-100" : "opacity-0"
-          } transition-all duration-1000`}
-        />
-        <Image
-          alt="hero"
-          src="/bg-hero3.webp"
-          fill
-          className={`${
-            image === 3 ? "opacity-100" : "opacity-0"
-          } transition-all duration-1000`}
-        />
-        <Image
-          alt="hero"
-          src="/bg-hero4.webp"
-          fill
-          className={`${
-            image === 4 ? "opacity-100" : "opacity-0"
-          } transition-all duration-1000`}
-        />
-        <Image
-          alt="hero"
-          src="/bg-hero5.webp"
-          fill
-          className={`${
-            image === 5 ? "opacity-100" : "opacity-0"
-          } transition-all duration-1000`}
-        />
-        <Image
-          alt="hero"
-          src="/bg-hero6.webp"
-          fill
-          className={`${
-            image === 6 ? "opacity-100" : "opacity-0"
           } transition-all duration-1000`}
         />
       </div>
@@ -71,7 +39,7 @@ function HomeBanner() {
           Find the perfect&nbsp;
           <i>freelance</i>
           <br />
-          services for your business
+          services and products for your business
         </h1>
         <div className="flex align-middle">
           <div className="relative">

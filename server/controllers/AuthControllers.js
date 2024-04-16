@@ -27,6 +27,7 @@ export const signup = async (req, res, next) => {
           password: await generatePassword(password),
         },
       });
+      console.log("user created!")
       return res.status(201).json({
         user: { id: user?.id, email: user?.email },
         jwt: createToken(email, user.id),

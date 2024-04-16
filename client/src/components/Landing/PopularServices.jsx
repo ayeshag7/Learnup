@@ -32,10 +32,10 @@ function PopularServices() {
   ];
   return (
     <div className="mx-20 my-16">
-      <h2 className="text-4xl mb-5 text-[#404145] font-bold">
-        Popular Services
+      <h2 className="text-4xl mb-16 mx-20 text-[#404145] font-bold">
+          Popular Services:
       </h2>
-      <ul className="flex flex-wrap gap-16">
+      <ul className="flex justify-center flex-wrap gap-16">
         {popularServicesData.map(({ name, label, image }) => {
           return (
             <li
