@@ -1,6 +1,6 @@
 import ImageUpload from "../../../components/ImageUpload";
 import { categories } from "../../../utils/categories";
-import { EDIT_GIG_DATA, GET_GIG_DATA } from "../../../utils/constants";
+import { EDIT_GIG_DATA, GET_GIG_DATA, DELETE_GIG_ROUTE } from "../../../utils/constants";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -114,6 +114,23 @@ function EditGig() {
       }
     }
   };
+
+  const deleteGig = async () => {
+    try {
+      const response = await axios.delete(`${DELETE_GIG_ROUTE}/${data.id}`, {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${cookies.jwt}`,
+        },
+      });
+      if (response.status === 200) {
+        router.push("/seller/gigs");
+      }
+    } catch (error) {
+      console.error("Error deleting gig:", error);
+    }
+  };
+
   return (
     <div className="min-h-[80vh] my-10 mt-0 px-32">
       <h1 className="text-6xl text-gray-900 mb-5">Edit Gig</h1>
@@ -278,7 +295,7 @@ function EditGig() {
             />
           </div>
         </div>
-        <div>
+        <div className="flex justify-start gap-x-8">
           <button
             className="border   text-lg font-semibold px-5 py-3   border-[#1DBF73] bg-[#1DBF73] text-white rounded-md"
             type="button"
@@ -286,6 +303,16 @@ function EditGig() {
           >
             Edit
           </button>
+
+          {/* Button to delete gig */}
+          <button
+            className="border text-lg font-semibold px-5 py-3 border-red-500 bg-red-500 text-white rounded-md"
+            type="button"
+            onClick={deleteGig}
+          >
+            Delete Gig
+          </button>
+
         </div>
       </form>
     </div>

@@ -165,7 +165,7 @@ function Navbar() {
     <>
       {isLoaded && (
         <nav
-          className={`w-full px-16 flex justify-between items-center py-6  top-0 z-30 transition-all duration-300 ${
+          className={`w-full px-8 flex justify-between items-center py-6  top-0 z-30 transition-all duration-300 ${
             navFixed || userInfo
               ? "fixed bg-white border-b border-gray-200"
               : "absolute bg-transparent border-transparent"
@@ -234,7 +234,7 @@ function Navbar() {
               })}
             </ul>
           ) : (
-            <ul className="flex gap-10 items-center">
+            <ul className="flex gap-8 items-center">
               {isSeller && (
                 <li
                   className="cursor-pointer text-[#1DBF73] font-medium"
@@ -265,6 +265,17 @@ function Navbar() {
                   Switch To Seller
                 </li>
               )}
+
+              {isSeller && (
+                <li
+                  className="cursor-pointer font-medium"
+                >
+                  <Link href="/seller">
+                  Dashboard
+                  </Link>
+                </li>
+              )}
+
               <li
                 className="cursor-pointer"
                 onClick={(e) => {

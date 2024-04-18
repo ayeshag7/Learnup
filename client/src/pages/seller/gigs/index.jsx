@@ -2,9 +2,13 @@ import { GET_USER_GIGS_ROUTE } from "../../../utils/constants";
 import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useStateProvider } from "../../../context/StateContext";
 
 function Index() {
   const [gigs, setGigs] = useState([]);
+  const [{ showLoginModal, showSignupModal, isSeller, userInfo }, dispatch] =
+    useStateProvider();
+  
   useEffect(() => {
     const getUserGigs = async () => {
       try {
@@ -19,25 +23,7 @@ function Index() {
       }
     };
     getUserGigs();
-  }, []);
-
-  const deleteGig = async (gigId) => {
-    try {
-      const response = await axios.delete(`/api/gigs/${gigId}`, {
-        withCredentials: true,
-        headers: {
-          Authorization: `Bearer ${cookies.jwt}`,
-        },
-      });
-      if (response.status === 200) {
-        // Gig deleted successfully
-        // You may want to update the gigs list after deleting
-        setGigs(gigs.filter((gig) => gig.id !== gigId));
-      }
-    } catch (error) {
-      console.error("Error deleting gig:", error);
-    }
-  };
+  }, []); 
 
   return (
     <div className="min-h-[80vh] my-10 mt-0 px-32">
@@ -91,9 +77,12 @@ function Index() {
                     </Link>
                   </td>
                   <td className="px-6 py-4 text-right">
-                    <button className="font-medium text-red-600 hover:underline" onClick={deleteGig}>
-                        Delete
-                    </button>
+                    <Link
+                        href={`/seller/gigs/${id}`}
+                        className="font-medium text-red-600 hover:underline"
+                      >
+                      Delete
+                    </Link>
                   </td>
                 </tr>
               );

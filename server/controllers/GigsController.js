@@ -176,6 +176,40 @@ export const editGig = async (req, res, next) => {
   }
 };
 
+export const deleteGig = async (req, res, next) => {
+  try {
+    const gigId = parseInt(req.params.gigId);
+    if (!gigId) {
+      return res.status(400).send("GigId should be required.");
+    }
+    const prisma = new PrismaClient();
+    const gig = await prisma.gigs.findUnique({
+      where: { id: gigId },
+    });
+
+    if (!gig) {
+      return res.status(404).send("Gig not found.");
+    }
+
+    // Delete associated images from the filesystem
+    gig.images.forEach((image) => {
+      if (existsSync(`uploads/${image}`)) {
+        unlinkSync(`uploads/${image}`);
+      }
+    });
+
+    // Delete the gig from the database
+    await prisma.gigs.delete({
+      where: { id: gigId },
+    });
+
+    return res.status(200).send("Gig deleted successfully.");
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Internal Server Error");
+  }
+};
+
 export const searchGigs = async (req, res, next) => {
   try {
     if (req.query.searchTerm || req.query.category) {

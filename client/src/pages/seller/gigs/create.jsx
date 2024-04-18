@@ -37,6 +37,7 @@ function CreateGigs() {
   
     // Convert the value to a number
     let updatedValue = value;
+    console.log(updatedValue)
     if (name === "price") {
       const numericValue = parseFloat(value);
       updatedValue = numericValue < 5 ? 5 : numericValue;
@@ -59,6 +60,7 @@ function CreateGigs() {
     }
   };
   const addGig = async () => {
+    console.log("Clicked!")
     const { category, description, price, revisions, time, title, shortDesc } =
       data;
     if (
@@ -72,6 +74,7 @@ function CreateGigs() {
       revisions > 0 &&
       time > 0
     ) {
+      console.log("Data is present!")
       const formData = new FormData();
       files.forEach((file) => formData.append("images", file));
       const gigData = {

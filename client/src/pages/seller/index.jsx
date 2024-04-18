@@ -27,7 +27,7 @@ function Index() {
     <>
       {userInfo && (
         <div className="flex min-h-[80vh] my-12 mt-0 px-32 gap-5">
-          <div className="shadow-md h-max p-10 flex my-12 flex-col gap-5 min-w-96 w-96">
+          <div className="shadow-lg border border-[#1DBF73] h-max p-10 flex my-12 flex-col gap-5 min-w-96 w-96">
             <div className="flex gap-5 justify-center items-center">
               <div>
                 {userInfo?.imageName ? (
@@ -60,7 +60,7 @@ function Index() {
           <div>
             <div className="grid grid-cols-3 my-12 gap-10 w-full">
               <div
-                className="shadow-md h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300"
+                className="shadow-md border border-[#1DBF73] h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300"
                 onClick={() => router.push("/seller/gigs")}
               >
                 <h2 className="text-xl">Total Gigs</h2>
@@ -69,7 +69,7 @@ function Index() {
                 </h3>
               </div>
               <div
-                className="shadow-md h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300"
+                className="shadow-md border border-[#1DBF73] h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300"
                 onClick={() => router.push("/seller/orders")}
               >
                 <h2 className="text-xl">Total Orders</h2>
@@ -78,7 +78,7 @@ function Index() {
                 </h3>
               </div>
               <div
-                className="shadow-md h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300"
+                className="shadow-md border border-[#1DBF73] h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300"
                 onClick={() => router.push("/seller/unread-messages")}
               >
                 <h2 className="text-xl"> Unread Messages</h2>
@@ -87,19 +87,19 @@ function Index() {
                 </h3>
               </div>
 
-              <div className="shadow-md h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300">
+              <div className="shadow-md border border-[#1DBF73] h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300">
                 <h2 className="text-xl">Earnings Today</h2>
                 <h3 className="text-[#1DBF73] text-3xl font-extrabold">
                   ${dashboardData?.dailyRevenue}
                 </h3>
               </div>
-              <div className="shadow-md h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300">
+              <div className="shadow-md border border-[#1DBF73] h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300">
                 <h2 className="text-xl">Earnings Monthly</h2>
                 <h3 className="text-[#1DBF73] text-3xl font-extrabold">
                   ${dashboardData?.monthlyRevenue}
                 </h3>
               </div>
-              <div className="shadow-md h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300">
+              <div className="shadow-md border border-[#1DBF73] h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300">
                 <h2 className="text-xl">Earnings Yearly</h2>
                 <h3 className="text-[#1DBF73] text-3xl font-extrabold">
                   ${dashboardData?.revenue}
