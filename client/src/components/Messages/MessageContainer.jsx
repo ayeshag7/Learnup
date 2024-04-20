@@ -54,9 +54,9 @@ function MessageContainer() {
     }
   };
   return (
-    <div className="h-[80vh]">
+    <div className="h-[80vh] my-4">
       <div className="max-h-[80vh]   flex flex-col justify-center items-center">
-        <div className="bg-white py-8 px-4 shadow-2xl sm:rounded-lg sm:px-10 w-[80vw] border flex flex-col">
+        <div className="bg-white border border-[#1DBF73] py-8 px-4 shadow-2xl sm:rounded-lg sm:px-10 w-[80vw] flex flex-col">
           <div className="mt-8">
             <div className="space-y-4 h-[50vh] overflow-y-auto pr-4 ">
               {messages.map((message) => (
