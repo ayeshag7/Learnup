@@ -35,11 +35,8 @@ function HomeBanner() {
         />
       </div>
       <div className="z-10 relative w-[650px] flex justify-center flex-col h-full gap-5 ml-20">
-        <h1 className="text-white text-5xl leading-snug">
-          Find the perfect&nbsp;
-          <i>freelance</i>
-          <br />
-          services and products for your business
+        <h1 className="text-white text-4xl font-bold leading-loose">
+        Les <span className="bg-headergreen p-1 text-headeryellow mb-12">produits numériques</span> et les <span className="bg-headerskin p-1 text-headergreen">services de freelances</span> au services de la <span className="bg-headeryellow p-1">croissance</span> de vos projets.
         </h1>
         <div className="flex align-middle">
           <div className="relative">
@@ -47,20 +44,20 @@ function HomeBanner() {
             <input
               type="text"
               className="h-14 w-[450px] pl-10 rounded-md rounded-r-none"
-              placeholder={`Try "building mobile app"`}
+              placeholder={`Essayez de « créer une application mobile`}
               value={searchData}
               onChange={(e) => setSearchData(e.target.value)}
             />
           </div>
           <button
-            className="bg-[#1DBF73] text-white px-12 text-lg font-semibold rounded-r-md"
+            className="bg-buttondarkgreen text-white px-12 text-lg font-semibold rounded-r-md"
             onClick={() => router.push(`/search?q=${searchData}`)}
           >
-            Search
+            Rechercher
           </button>
         </div>
         <div className="text-white flex gap-4">
-          Popular:
+        Populaire:
           <ul className="flex gap-5">
             <li
               className="text-sm py-1 px-3 border rounded-full hover:bg-white hover:text-black transition-all duration-300	cursor-pointer"

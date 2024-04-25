@@ -11,3 +11,75 @@
 ::-webkit-scrollbar-thumb {
   background-color: rgb(173, 173, 173);
 }
+
+@layer base {
+	* {
+		@apply scroll-smooth list-none;
+	}
+	body {
+		@apply bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200;
+	}
+	.section {
+		@apply py-14;
+	}
+	.section-header {
+		@apply text-lg md:text-2xl lg:text-3xl text-primary-400 font-heading-semibold relative before:content-[''] before:absolute before:size-1.5 before:bottom-[8px]  before:lg:bottom-[9px] before:-left-3;
+	}
+
+	.testimonials-section::-webkit-scrollbar {
+		@apply size-2 rounded;
+	}
+
+	.testimonials-section::-webkit-scrollbar-track {
+		@apply bg-transparent dark:bg-transparent;
+	}
+
+	.testimonials-section::-webkit-scrollbar-thumb {
+		@apply bg-gray-300 dark:bg-gray-50/50 rounded;
+	}
+
+	/* Carousel styles */
+.embla {
+	overflow: hidden;
+}
+.embla__container {
+	display: flex;
+	/* gap: 20px; */
+	/* min-height: 100%; */
+}
+.embla__slide {
+	flex: 0 0 100%;
+	min-width: 0;
+	min-height: 100%;
+}
+
+.embla__controls {
+	display: flex;
+	justify-content: center;
+	gap: 1.2rem;
+	margin-top: 1.8rem;
+}
+.embla__buttons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.6rem;
+	align-items: center;
+}
+.embla__button {
+	@apply m-0 p-0 h-[2.5rem] w-[2.5rem] flex items-center justify-center cursor-pointer rounded-full bg-gray-200 text-gray-500 dark:text-gray-400 dark:bg-gray-900 border border-gray-300 dark:border-gray-700;
+	-webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+	-webkit-appearance: none;
+	appearance: none;
+	touch-action: manipulation;
+	text-decoration: none;
+	box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+	z-index: 1;
+}
+.embla__button:disabled {
+	@apply text-gray-300 dark:text-gray-800;
+}
+.embla__button__svg {
+	width: 35%;
+	height: 35%;
+}
+}

@@ -99,7 +99,7 @@ function Footer() {
     },
   ];
   return (
-    <footer className="w-full  mx-auto px-32 py-16 h-max border-t border-gray-200 bg-gray-100">
+    <footer className="w-full  mx-auto px-32 py-16 h-max border-t border-gray-400 bg-gray-100 dark:bg-[#2B3544]">
       <ul className="flex justify-between">
         {data.map(({ headerName, links }) => {
           return (
@@ -107,7 +107,7 @@ function Footer() {
               <span className="font-bold">{headerName}</span>
               <ul className="flex flex-col gap-2">
                 {links.map(({ name, link }) => (
-                  <li key={name} className="text-[#404145]">
+                  <li key={name} className="text-[#404145] dark:text-gray-400">
                     <Link href={link}>{name}</Link>
                   </li>
                 ))}
@@ -127,7 +127,7 @@ function Footer() {
           {socialLinks.map(({ icon, link, name }) => (
             <li
               key={name}
-              className="text-xl text-[#404145] hover:text-[#1DBF73] transition-all"
+              className="text-xl text-[#404145] dark:text-white dark:hover:text-[#1DBF73] hover:text-[#1DBF73] transition-all"
             >
               <Link href={link}>{icon}</Link>
             </li>
