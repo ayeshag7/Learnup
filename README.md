@@ -2,7 +2,7 @@ An e-learning plus selling platform.
 
 ## Description
 
-This is a fully functional clone of the popular freelancing platform, Fiverr. It offers all the core features you would expect from a platform like Fiverr, allowing users to offer and purchase services seamlessly.
+This is a fully functional e-learning plus selling platform, Learneup. It was primarly focused on the french marketplace. It offers all the core features you would expect from a platform like Fiverr, allowing users to offer and purchase services seamlessly.
 
 ## Features
 * User authentication (Sign up, Log in, Log out)
