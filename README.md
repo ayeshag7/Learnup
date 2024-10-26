@@ -37,7 +37,7 @@ npm install
 ```
 3. Set up your environment variables. Create a .env file in the backend directory and add the following:
 ```
-DATABASE_URL=postgresql://user:password@localhost:5432/fiverr_clone
+DATABASE_URL=postgresql://user:password@localhost:5432/learnup
 JWT_SECRET=your_jwt_secret
 ```
 4. Migrate the database schema:
