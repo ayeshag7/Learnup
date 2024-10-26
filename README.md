@@ -60,5 +60,22 @@ npm install
 npm run dev
 ```
 
+## Preview
+
+![image](https://github.com/user-attachments/assets/68bd8bf2-63f8-42d7-9157-020009a87974)
+
+<br>
+
+![image](https://github.com/user-attachments/assets/ccaf2345-77f2-4176-b5bb-1b99ef16fcd9)
+
+<br>
+
+![image](https://github.com/user-attachments/assets/d4298272-3601-4282-bb31-cf2b185f0fbc)
+
+<br>
+
+![image](https://github.com/user-attachments/assets/216b743e-f400-4c40-82e2-092a3b07ba28)
+
+
 ### Usage
 To use the application, navigate to http://localhost:3000 in your web browser. You can sign up for a new account or log in with an existing one to start offering or purchasing services.   
