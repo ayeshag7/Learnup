@@ -82,7 +82,7 @@ npm run dev
 
 <br>
 
-![image](https://github.com/user-attachments/assets/0b3f7f2b-6f6f-4d72-bbc5-9bf13d3c982c)
+![image](https://github.com/user-attachments/assets/91daf240-ff40-4833-8113-1365f439afd2)
 
 
 ### Usage
