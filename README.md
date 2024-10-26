@@ -28,8 +28,8 @@ Make sure you have Node.js and PostgreSQL installed on your machine.
 ### Backend
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/fiverr-clone.git
-cd fiverr-clone/backend
+git clone https://github.com/yourusername/learnup.git
+cd learnup/backend
 ```
 2. Install NPM packages:
 ```
