@@ -1,8 +1,9 @@
-An e-learning plus selling platform.
+# Learnup
+An E-Learning plus Selling Platform.
 
 ## Description
 
-This is a fully functional e-learning plus selling platform, Learneup. It was primarly focused on the french marketplace. It offers all the core features you would expect from a platform like Fiverr, allowing users to offer and purchase services seamlessly.
+This is a fully functional e-learning plus selling platform, Learnup. It was primarly focused on the french marketplace. It offers all the core features you would expect from a marketplace platform like Fiverr, allowing users to offer and purchase services seamlessly.
 
 ## Features
 * User authentication (Sign up, Log in, Log out)
